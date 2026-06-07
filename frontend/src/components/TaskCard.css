@@ -1,0 +1,189 @@
+.task-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s;
+  cursor: default;
+  animation: fadeIn 0.4s ease both;
+}
+
+.task-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow), 0 0 0 1px var(--border-light);
+}
+
+.task-card.completed {
+  opacity: 0.7;
+}
+
+.task-card.completed:hover {
+  opacity: 0.85;
+}
+
+/* Top row */
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.priority-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.priority-dot-sm {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+/* Toggle check */
+.toggle-check {
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.check-circle {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.toggle-check:hover .check-circle {
+  border-color: var(--accent);
+}
+
+.check-circle.checked {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* Body */
+.card-body { display: flex; flex-direction: column; gap: 6px; }
+
+.task-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.task-title.strikethrough {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tags */
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-size: 11px;
+  color: var(--accent-light);
+  background: var(--accent-glow);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.tag-more {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 2px 6px;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.due-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--status-pending);
+  background: rgba(245, 158, 11, 0.08);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.card-created {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-right: auto;
+}
+
+.card-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.task-card:hover .card-actions { opacity: 1; }
+
+.action-btn {
+  width: 28px; height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.action-btn.edit { color: var(--text-muted); }
+.action-btn.edit:hover { background: var(--accent-glow); color: var(--accent-light); }
+
+.action-btn.del { color: var(--text-muted); }
+.action-btn.del:hover { background: rgba(255, 101, 132, 0.1); color: var(--accent-2); }
